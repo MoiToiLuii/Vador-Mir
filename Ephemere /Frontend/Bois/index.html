@@ -1,0 +1,135 @@
+<!DOCTYPE html> <!-- Indique que le document utilise la norme HTML5 -->
+<html lang="fr"> <!-- Langue principale du site -->
+
+<head>
+  <meta charset="UTF-8" /> <!-- Encodage UTF-8 pour supporter les caractères spéciaux -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- Responsive design -->
+  
+  <title>L'Atelier du Bois - Artisanat & Menuiserie</title> <!-- Titre affiché dans l’onglet du navigateur -->
+
+  <!-- Feuille de style principale -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Icône de l’onglet du navigateur -->
+  <link rel="icon" type="image/png" href="icone.png">
+</head>
+
+<body>
+
+  <!-- ******************** HEADER ******************** -->
+  <header>
+    <nav> <!-- Navigation principale du site -->
+
+      <div class="logo"> <!-- Zone contenant le logo -->
+        <img src="logo.gif" alt="Logo L'Atelier du Bois" class="logo-img"> <!-- Logo image -->
+        <span class="logo-text">L'ATELIER DU BOIS</span> <!-- Texte stylisé du logo -->
+      </div>
+
+      <ul class="nav-links"> <!-- Menu de navigation -->
+        <li><a href="#accueil">Accueil</a></li> <!-- Lien vers la section accueil -->
+        <li><a href="#services">Services</a></li> <!-- Lien vers la section services -->
+        <li><a href="#galerie">Galerie</a></li> <!-- Lien vers la section galerie -->
+        <li><a href="#contact">Contact</a></li> <!-- Lien vers la section contact -->
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ******************** HERO (Bannière d'accueil) ******************** -->
+  <section class="hero" id="accueil">
+
+    <!-- Animation GIF à gauche -->
+    <img class="lottie-left" src="bois.gif" alt="Animation bois gauche" />
+
+    <!-- Contenu principal de la bannière -->
+    <div class="hero-content">
+      <h1>L'Atelier du Bois</h1> <!-- Titre principal du site -->
+      <p>Artisanat traditionnel &amp; Créations sur mesure</p> <!-- Phrase d'accroche -->
+      <a href="#services" class="btn">Découvrir nos services</a> <!-- Bouton vers services -->
+    </div>
+
+    <!-- Animation GIF à droite -->
+    <img class="lottie-right" src="bois.gif" alt="Animation bois droite" />
+  </section>
+
+  <!-- ******************** SECTION SERVICES ******************** -->
+  <section class="container" id="services">
+    <h2 class="section-title">Nos Services</h2> <!-- Titre de la section -->
+
+    <div class="services"> <!-- Conteneur de toutes les cartes de services -->
+
+      <!-- Carte service 1 -->
+      <div class="service-card">
+        <h3>🪚 Menuiserie sur mesure</h3>
+        <p>Création de meubles uniques adaptés à vos besoins et à votre espace. Chaque pièce est conçue avec soin et précision.</p>
+      </div>
+
+      <!-- Carte service 2 -->
+      <div class="service-card">
+        <h3>🏡 Aménagement intérieur</h3>
+        <p>Bibliothèques, placards, dressings et aménagements complets pour optimiser votre intérieur avec élégance.</p>
+      </div>
+
+      <!-- Carte service 3 -->
+      <div class="service-card">
+        <h3>🔨 Restauration</h3>
+        <p>Redonner vie à vos meubles anciens grâce à notre expertise en restauration et en techniques traditionnelles.</p>
+      </div>
+
+      <!-- Carte service 4 -->
+      <div class="service-card">
+        <h3>🎨 Finitions d'art</h3>
+        <p>Patines, vernis, teintures et finitions nobles pour sublimer chaque création en bois massif.</p>
+      </div>
+
+      <!-- Carte service 5 -->
+      <div class="service-card">
+        <h3>🪑 Mobilier artisanal</h3>
+        <p>Tables, chaises, commodes et mobilier d'exception fabriqués à la main avec des essences de bois nobles.</p>
+      </div>
+
+      <!-- Carte service 6 -->
+      <div class="service-card">
+        <h3>🎁 Objets décoratifs</h3>
+        <p>Créations décoratives uniques et personnalisables pour apporter chaleur et authenticité à votre intérieur.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ******************** ABOUT + GALERIE ******************** -->
+  <section class="about" id="galerie">
+    <div class="container">
+
+      <h2 class="section-title">Notre Savoir-faire</h2> <!-- Titre de la section -->
+
+      <!-- Texte descriptif sur l'entreprise -->
+      <div class="about-content">
+        <p>Depuis plus de 20 ans, l'Atelier du Bois perpétue la tradition de la menuiserie d'art. Chaque projet est une rencontre entre votre vision et notre passion du bois. Nous travaillons avec des essences nobles et locales, dans le respect de la matière et de l'environnement.</p>
+      </div>
+
+      <!-- Galerie de créations -->
+      <div class="gallery">
+        <div class="gallery-item">Table en chêne</div>
+        <div class="gallery-item">Bibliothèque sur mesure</div>
+        <div class="gallery-item">Chaises artisanales</div>
+        <div class="gallery-item">Commode restaurée</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ******************** FOOTER / CONTACT ******************** -->
+  <footer id="contact">
+    <h3>Contactez-nous</h3> <!-- Titre de la section -->
+
+    <div class="contact-info"> <!-- Informations de contact -->
+      <p>📍 123 Rue de l'Artisanat, 75000 Paris</p> <!-- Adresse -->
+      <p>📞 01 23 45 67 89</p> <!-- Numéro de téléphone -->
+      <p>✉️ contact@atelierdubois.fr</p> <!-- E-mail -->
+    </div>
+
+    <p class="copyright">&copy; 2024 L'Atelier du Bois - Tous droits réservés</p> <!-- Texte légal -->
+  </footer>
+
+</body>
+</html>
