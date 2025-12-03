@@ -1,1 +1,158 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <!-- Permet l’affichage correct sur mobile / tablette / PC -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Espace administrateur - Projet Nuit de l'Info</title>
+    <!-- Feuille de style globale -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- En-tête avec titre + navigation principale -->
+    <header class="site-header">
+        <h1 class="site-title">Assistant anciens systèmes</h1>
+
+        <nav aria-label="Navigation principale">
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a href="index.html">Accueil</a>
+                </li>
+                <li class="nav-item">
+                    <a href="chatbot.html">Chatbot IA</a>
+                </li>
+                <!-- aria-current indique la page active -->
+                <li class="nav-item">
+                    <a href="admin.html" aria-current="page">Espace admin</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html">Nous contacter</a>
+                </li>
+                <li class="nav-item">
+                    <button id="logout-btn" type="button" class="link-button">
+                        Déconnexion
+                    </button>
+                </li>
+                <li class="nav-item"><a href="formation.html">Formation</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Contenu principal -->
+    <main>
+        <!-- Introduction de l’espace admin -->
+        <section aria-labelledby="admin-intro-title" class="hero-section">
+            <h2 id="admin-intro-title">Tableau de bord administrateur</h2>
+            <p>
+                Cette page est réservée aux administrateurs de la plateforme.
+                Elle permet de consulter les utilisateurs inscrits et l’historique
+                des demandes envoyées au chatbot IA.
+            </p>
+            <p>
+                Par sécurité, certaines actions (modification de rôle, suppression)
+                devront être confirmées. Les mots de passe ne sont jamais visibles.
+            </p>
+        </section>
+
+        <!-- Section gestion des utilisateurs -->
+        <section aria-labelledby="users-title" class="admin-section">
+            <h2 id="users-title">Utilisateurs enregistrés</h2>
+
+            <!-- 
+                Tableau accessible :
+                - caption : titre du tableau.
+                - thead/tbody/th : structure claire pour les lecteurs d’écran.
+            -->
+            <table class="admin-table">
+                aption>Liste des comptes utilisateurs</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">Adresse e-mail</th>
+                        <th scope="col">Rôle</th>
+                        <th scope="col">Créé le</th>
+                        <th scope="col">Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="users-table-body">
+                    <!-- 
+                        Lignes générées dynamiquement par un futur fichier JS (ex: admin.js)
+                        à partir des données renvoyées par l’API /admin/users.
+                        On laisse un exemple statique en attendant.
+                    -->
+                    <tr>
+                        <td>exemple@domaine.com</td>
+                        <td>admin</td>
+                        <td>2025-12-03</td>
+                        <td>
+                            <!-- Boutons d’actions simples, avec texte explicite -->
+                            <button type="button" class="btn-small" aria-label="Passer cet utilisateur en rôle utilisateur simple">
+                                Rendre user
+                            </button>
+                            <button type="button" class="btn-small btn-danger" aria-label="Supprimer ce compte utilisateur">
+                                Supprimer
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Section historique des requêtes IA -->
+        <section aria-labelledby="history-title" class="admin-section">
+            <h2 id="history-title">Historique des requêtes IA</h2>
+
+            <table class="admin-table">
+                aption>Dernières questions envoyées au chatbot IA</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">Date</th>
+                        <th scope="col">Utilisateur</th>
+                        <th scope="col">Question (résumé)</th>
+                        <th scope="col">Statut</th>
+                    </tr>
+                </thead>
+                <tbody id="ai-requests-table-body">
+                    <!-- Exemple statique ; sera remplacé par les données API /admin/ai-requests -->
+                    <tr>
+                        <td>2025-12-03 10:30</td>
+                        <td>exemple@domaine.com</td>
+                        <td>Comment mettre à jour mon navigateur...</td>
+                        <td>Succès</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Section d’info / rappel sécurité -->
+        <section aria-labelledby="admin-security-title" class="info-section">
+            <h2 id="admin-security-title">Rappels sur la sécurité et les données</h2>
+            <p>
+                Les mots de passe sont stockés uniquement sous forme de
+                <strong>hachage</strong> dans la base de données. Aucun mot de passe
+                en clair n’est visible, même pour les administrateurs.
+            </p>
+            <p>
+                N’enregistrez pas d’informations personnelles inutiles. Utilisez
+                uniquement l’adresse e-mail comme identifiant pour limiter les risques
+                en cas de fuite de données.
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <p class="small-text">
+            Espace réservé aux administrateurs. Déconnectez-vous lorsque vous avez terminé.
+        </p>
+    </footer>
+
+    <!-- JS global (déconnexion, éventuels contrôles d’accès côté front) -->
+    <script src="js/main.js"></script>
+    <!-- Plus tard, tu pourras ajouter un admin.js pour charger les tableaux via l’API -->
+
+<script src="js/main.js"></script>
+<script src="js/admin.js"></script>
+
+
+</body>
+</html>
 
