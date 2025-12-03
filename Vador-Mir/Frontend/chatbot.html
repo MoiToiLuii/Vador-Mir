@@ -1,1 +1,137 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <!-- Rendre la page utilisable sur mobile / tablette / PC -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot IA - Projet Nuit de l'Info</title>
+    <!-- Feuille de style globale -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- En-tête avec le titre du site et la navigation principale -->
+    <header class="site-header">
+        <h1 class="site-title">Assistant anciens systèmes</h1>
+
+        <!-- Navigation identique à celle de index.html pour la cohérence -->
+        <nav aria-label="Navigation principale">
+            <ul class="nav-list">
+                <li class="nav-item"><a href="formation.html">Formation</a></li>
+                <li class="nav-item">
+                    <a href="index.html">Accueil</a>
+                </li>
+                <li class="nav-item">
+                    <!-- aria-current="page" indique que nous sommes sur cette page -->
+                    <a href="chatbot.html" aria-current="page">Chatbot IA</a>
+                </li>
+                <li class="nav-item">
+                    <a href="admin.html">Espace admin</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html">Nous contacter</a>
+                </li>
+                <li class="nav-item">
+                    <button id="logout-btn" type="button" class="link-button">
+                        Déconnexion
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Contenu principal de la page -->
+    <main>
+        <!-- 
+            Section de présentation du chatbot.
+            Explique à quoi il sert et ses limites (important d’un point de vue éthique).
+        -->
+        <section aria-labelledby="chatbot-intro-title" class="hero-section">
+            <h2 id="chatbot-intro-title">Poser une question à l’assistant IA</h2>
+            <p>
+                Ce chatbot vous aide à résoudre des problèmes sur des systèmes plus anciens
+                (comme Windows&nbsp;10) en vous proposant des explications étape par étape.
+            </p>
+            <p>
+                Attention&nbsp;: les réponses de l’IA sont des suggestions automatiques et
+                peuvent contenir des erreurs. Vérifiez toujours avant d’appliquer.
+            </p>
+        </section>
+
+        <!-- 
+            Section principale du chatbot.
+            On utilise une structure en deux colonnes (historique + zone de saisie)
+            qui deviendra une seule colonne sur mobile via le CSS.
+        -->
+        <section aria-labelledby="chatbot-title" class="chatbot-section">
+            <h2 id="chatbot-title">Conversation</h2>
+
+            <div class="chatbot-layout">
+                <!-- 
+                    Colonne gauche : historique des messages.
+                    role="log" + aria-live notifient les lecteurs d’écran des nouveaux messages.
+                -->
+                <div
+                    id="chat-history"
+                    class="chat-history"
+                    role="log"
+                    aria-live="polite"
+                    aria-label="Historique des messages du chatbot"
+                >
+                    <!-- Messages ajoutés dynamiquement par chatbot.js -->
+                    <!-- Exemple de message initial pour ne pas laisser la zone vide -->
+                    <div class="message message-bot">
+                        <p><strong>Assistant&nbsp;:</strong> Bonjour&nbsp;! Posez-moi une question sur votre système et je ferai de mon mieux pour vous aider.</p>
+                    </div>
+                </div>
+
+                <!-- Colonne droite : zone de saisie et bouton d’envoi -->
+                <div class="chat-input-area">
+                    <!-- 
+                        Label relié à la zone de texte, utile pour les lecteurs d’écran.
+                        aria-describedby pointe vers un petit texte explicatif.
+                    -->
+                    <label for="user-message">Votre question</label>
+                    <textarea
+                        id="user-message"
+                        name="user-message"
+                        rows="4"
+                        maxlength="500"
+                        placeholder="Exemple : Comment mettre à jour mon navigateur sur Windows 10 ?"
+                        aria-describedby="message-help"
+                        required
+                    ></textarea>
+                    <!-- Texte d’aide sur les limites et l’usage -->
+                    <p id="message-help" class="help-text">
+                        Limité à 500 caractères. Ne saisissez pas de données personnelles
+                        (mot de passe, numéro de carte, etc.).
+                    </p>
+
+                    <!-- Zone d’affichage des erreurs côté front (par ex. champ vide) -->
+                    <p id="chat-error" class="error-message" role="alert" aria-live="assertive"></p>
+
+                    <!-- 
+                        Bouton pour envoyer la question.
+                        type="button" pour laisser chatbot.js gérer l’envoi (fetch vers /api/chat).
+                    -->
+                    <button type="button" id="send-message-btn" class="btn-primary">
+                        Envoyer la question à l’IA
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Pied de page -->
+    <footer>
+        <p class="small-text">
+            Projet étudiant – Nuit de l'Info – Chatbot d’aide aux utilisateurs d’anciens systèmes.
+        </p>
+    </footer>
+
+    <!-- JS global (déconnexion, etc.) -->
+    <script src="js/main.js"></script>
+    <!-- JS spécifique au chatbot (gestion de l’envoi / affichage des réponses) -->
+    <script src="js/chatbot.js"></script>
+</body>
+</html>
 
