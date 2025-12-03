@@ -1,1 +1,370 @@
+/* ===========================
+   Réglages généraux
+   =========================== */
+
+/* Police, couleur de fond, couleur de texte par défaut */
+:root {
+    --color-bg: #f5f5f7;        /* Fond clair neutre */
+    --color-text: #1f2933;     /* Texte foncé, bon contraste */
+    --color-primary: #2563eb;  /* Bleu principal (boutons, liens) */
+    --color-primary-dark: #1d4ed8;
+    --color-secondary: #6b7280;/* Gris pour textes secondaires */
+    --color-danger: #b91c1c;   /* Rouge pour erreurs / actions dangereuses */
+    --max-width: 960px;        /* Largeur max du contenu pour bonne lisibilité */
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;    /* Inclut padding/border dans la taille des éléments */
+}
+
+html {
+    font-size: 16px;           /* Base pour rem/em (facile à raisonner) */
+}
+
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.5;
+}
+
+/* Limiter la largeur du contenu et le centrer */
+main,
+.site-header,
+footer {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* ===========================
+   Liens, boutons, textes
+   =========================== */
+
+a {
+    color: var(--color-primary);
+    text-decoration: none;      /* On enlève le soulignement par défaut */
+}
+
+a:hover,
+a:focus {
+    text-decoration: underline; /* On le remet au survol / focus pour accessibilité */
+}
+
+/* Bouton principal (soumission de formulaires, action forte) */
+.btn-primary,
+button.btn-primary {
+    display: inline-block;
+    padding: 0.6rem 1.2rem;
+    border-radius: 0.375rem;
+    border: none;
+    background-color: var(--color-primary);
+    color: #ffffff;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* Effet hover/focus sur bouton principal */
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: var(--color-primary-dark);
+}
+
+/* Bouton secondaire (moins important) */
+.btn-secondary {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    border: 1px solid var(--color-primary);
+    background-color: transparent;
+    color: var(--color-primary);
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus {
+    background-color: var(--color-primary);
+    color: #ffffff;
+}
+
+/* Petits boutons (actions admin) */
+.btn-small {
+    padding: 0.25rem 0.6rem;
+    font-size: 0.85rem;
+    border-radius: 0.25rem;
+    border: 1px solid var(--color-secondary);
+    background-color: #ffffff;
+    cursor: pointer;
+}
+
+/* Variante danger (suppression, etc.) */
+.btn-danger {
+    border-color: var(--color-danger);
+    color: var(--color-danger);
+}
+
+.btn-danger:hover,
+.btn-danger:focus {
+    background-color: var(--color-danger);
+    color: #ffffff;
+}
+
+/* Bouton qui ressemble à un lien (pour Déconnexion) */
+.link-button {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    font: inherit;
+    color: var(--color-primary);
+    cursor: pointer;
+}
+
+/* Petits textes (footer, infos) */
+.small-text {
+    font-size: 0.85rem;
+    color: var(--color-secondary);
+}
+
+/* Messages d’erreur et d’aide */
+.error-message {
+    color: var(--color-danger);
+    font-size: 0.9rem;
+    margin-top: 0.25rem;
+    min-height: 1.1rem;  /* Évite que la page "saute" quand un message apparaît */
+}
+
+.help-text {
+    font-size: 0.85rem;
+    color: var(--color-secondary);
+}
+
+/* ===========================
+   Header et navigation
+   =========================== */
+
+.site-header {
+    padding: 1rem 1rem 0.5rem;
+}
+
+.site-title {
+    margin: 0 0 0.5rem 0;
+}
+
+/* Navigation sous forme de liste horizontale sur grand écran */
+.nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;            /* Permet de revenir à la ligne si l’espace manque */
+    gap: 0.75rem;
+}
+
+.nav-item a,
+.nav-item button {
+    padding: 0.4rem 0.75rem;
+    border-radius: 999px;       /* Pastille arrondie */
+    background-color: transparent;
+}
+
+/* Page active : fond léger pour indiquer la position dans le site */
+.nav-item a[aria-current="page"] {
+    background-color: #e0ebff;
+}
+
+/* ===========================
+   Sections génériques
+   =========================== */
+
+.hero-section {
+    margin: 1.5rem 0;
+    padding: 1rem;
+    background-color: #ffffff;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px rgba(15, 23, 42, 0.05);
+}
+
+.admin-section,
+.info-section,
+.contact-section {
+    margin: 1.5rem 0;
+    padding: 1rem;
+    background-color: #ffffff;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px rgba(15, 23, 42, 0.05);
+}
+
+/* ===========================
+   Formulaires (login, contact…)
+   =========================== */
+
+form {
+    max-width: 480px;          /* Évite que le formulaire soit trop large sur grand écran */
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+/* Styles communs aux inputs et textarea */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea {
+    width: 100%;
+    padding: 0.5rem 0.6rem;
+    border-radius: 0.375rem;
+    border: 1px solid #cbd5e1;
+    font: inherit;
+}
+
+/* Focus visible pour l’accessibilité clavier */
+input:focus,
+textarea:focus,
+button:focus,
+a:focus {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+}
+
+/* ===========================
+   Cartes de fonctionnalités (index)
+   =========================== */
+
+.features-section {
+    margin: 1.5rem 0;
+}
+
+.features-grid {
+    display: grid;
+    gap: 1rem;
+}
+
+/* Une colonne sur mobile, plusieurs sur écrans plus larges */
+.feature-card {
+    background-color: #ffffff;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    box-shadow: 0 1px 3px rgba(15, 23, 42, 0.05);
+}
+
+/* ===========================
+   Chatbot (historique + saisie)
+   =========================== */
+
+.chatbot-section {
+    margin: 1.5rem 0;
+}
+
+/* Layout de base : pile verticale (mobile) */
+.chatbot-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Historique des messages */
+.chat-history {
+    background-color: #ffffff;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    max-height: 350px;          /* Hauteur max avec défilement interne */
+    overflow-y: auto;
+}
+
+/* Message générique */
+.message {
+    margin-bottom: 0.75rem;
+}
+
+/* Message de l’utilisateur */
+.message-user {
+    text-align: right;
+}
+
+/* Message du bot (aligné à gauche par défaut) */
+.message-bot {
+    text-align: left;
+}
+
+/* Zone de saisie du chatbot */
+.chat-input-area {
+    background-color: #ffffff;
+    border-radius: 0.5rem;
+    padding: 1rem;
+}
+
+/* ===========================
+   Tables admin
+   =========================== */
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;   /* Pas d’espaces entre les bordures */
+    margin-top: 0.75rem;
+    font-size: 0.95rem;
+}
+
+.admin-table caption {
+    text-align: left;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.admin-table th,
+.admin-table td {
+    border: 1px solid #e5e7eb;
+    padding: 0.4rem 0.6rem;
+}
+
+.admin-table th {
+    background-color: #f3f4f6;
+    text-align: left;
+}
+
+/* ===========================
+   Footer
+   =========================== */
+
+footer {
+    padding: 1rem;
+    max-width: var(--max-width);
+    margin: 2rem auto 1rem;
+    border-top: 1px solid #e5e7eb;
+}
+
+/* ===========================
+   Responsive (écrans moyens / grands)
+   =========================== */
+
+@media (min-width: 640px) {
+    /* Grid à 3 colonnes pour les cartes sur écrans moyens */
+    .features-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 768px) {
+    /* Chatbot : historique et saisie côte à côte sur écrans plus grands */
+    .chatbot-layout {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .chat-history,
+    .chat-input-area {
+        flex: 1;
+    }
+}
 
