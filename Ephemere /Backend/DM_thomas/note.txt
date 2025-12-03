@@ -1,0 +1,1 @@
+J'ai directement mis la clé API Mistral dans le code. Elle ne marchera plus à partir de vendredi.
