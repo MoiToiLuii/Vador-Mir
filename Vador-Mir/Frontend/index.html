@@ -1,1 +1,152 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <!-- Rendre la page responsive sur mobile / tablette / PC -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil - Projet Nuit de l'Info</title>
+    <!-- Feuille de style globale -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- 
+        En-tête du site : logo/titre + navigation principale.
+        Cette partie est commune à plusieurs pages (tu peux la factoriser plus tard avec un template).
+    -->
+    <header class="site-header">
+        <!-- Titre général du site -->
+        <h1 class="site-title">Assistant anciens systèmes</h1>
+
+        <!-- 
+            Barre de navigation principale.
+            nav + liste <ul> aident les lecteurs d’écran à comprendre la structure.
+        -->
+        <nav aria-label="Navigation principale">
+            <ul class="nav-list">
+                <!-- Lien vers la page d'accueil (celle-ci) -->
+                <li class="nav-item">
+                    <a href="index.html" aria-current="page">Accueil</a>
+                </li>
+                <!-- Lien vers la page du chatbot IA -->
+                <li class="nav-item">
+                    <a href="chatbot.html">Chatbot IA</a>
+                </li>
+                <!-- Lien vers l’espace administrateur ; 
+                     côté front on peut cacher/désactiver si l’utilisateur n’est pas admin -->
+                <li class="nav-item">
+                    <a href="admin.html">Espace admin</a>
+                </li>
+                <!-- Lien vers la page de contact -->
+                <li class="nav-item">
+                    <a href="contact.html">Nous contacter</a>
+                </li>
+                <!-- Bouton/lien de déconnexion, géré par main.js -->
+                <li class="nav-item">
+                    <button id="logout-btn" type="button" class="link-button">
+                        Déconnexion
+                    </button>
+                </li>
+                <li class="nav-item"><a href="formation.html">Formation</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Contenu principal de la page -->
+    <main>
+        <!-- 
+            Section de présentation rapide du site.
+            aria-labelledby relie la section à son titre pour l’accessibilité.
+        -->
+        <section aria-labelledby="intro-title" class="hero-section">
+            <h2 id="intro-title">Bienvenue sur votre assistant pour anciens systèmes</h2>
+            <p>
+                Cette application a pour objectif d’aider les utilisateurs sur des systèmes
+                plus anciens (comme Windows&nbsp;10) avec des guides simples et un chatbot IA.
+            </p>
+            <p>
+                Utilisez le menu ci-dessus pour accéder au chatbot, à l’espace administrateur
+                ou nous envoyer un message via la page «&nbsp;Nous contacter&nbsp;».
+            </p>
+        </section>
+
+        <!-- 
+            Section qui met en avant les trois grandes fonctionnalités sous forme de cartes.
+            C’est utile pour le jury : il voit tout de suite ce que fait votre site.
+        -->
+        <section aria-labelledby="features-title" class="features-section">
+            <h2 id="features-title">Ce que vous pouvez faire ici</h2>
+
+            <div class="features-grid">
+                <!-- Carte 1 : accès rapides aux guides de base (si tu ajoutes une page plus tard) -->
+                <article class="feature-card">
+                    <h3>Comprendre les bases</h3>
+                    <p>
+                        Retrouvez des explications accessibles pour réaliser des actions
+                        courantes sur des systèmes anciens&nbsp;: installer un navigateur,
+                        vérifier sa connexion, sécuriser son poste, etc.
+                    </p>
+                </article>
+
+                <!-- Carte 2 : Chatbot IA -->
+                <article class="feature-card">
+                    <h3>Poser une question à l’IA</h3>
+                    <p>
+                        Utilisez le chatbot IA pour obtenir des réponses rapides
+                        et adaptées à votre situation. Les réponses IA restent des aides
+                        et doivent être vérifiées avant application.
+                    </p>
+                    <!-- Lien d’action clair vers la page chatbot -->
+                    <p>
+                        <a class="btn-primary" href="chatbot.html">Accéder au chatbot IA</a>
+                    </p>
+                </article>
+
+                <!-- Carte 3 : espace admin (pour les membres de l’équipe / jury) -->
+                <article class="feature-card">
+                    <h3>Gérer la plateforme</h3>
+                    <p>
+                        L’espace administrateur permet de suivre les utilisateurs et 
+                        l’historique des demandes envoyées au chatbot IA,
+                        afin d’améliorer progressivement le service.
+                    </p>
+                    <p>
+                        <a class="btn-secondary" href="admin.html">Ouvrir l’espace admin</a>
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <!-- 
+            Section d’information sur accessibilité / confidentialité.
+            C’est apprécié dans le cadre de la directive accessibilité.
+        -->
+        <section aria-labelledby="access-title" class="info-section">
+            <h2 id="access-title">Accessibilité et protection des données</h2>
+            <p>
+                L’interface est conçue pour être lisible et utilisable au clavier.
+                Nous utilisons uniquement votre adresse e-mail comme identifiant
+                et stockons les mots de passe sous forme de <strong>hachage</strong>,
+                jamais en clair.
+            </p>
+            <p>
+                Ce site est réalisé dans le cadre d’un projet étudiant pour la Nuit de l’Info
+                et suit autant que possible les bonnes pratiques d’accessibilité du web.
+            </p>
+        </section>
+    </main>
+
+    <!-- Pied de page commun -->
+    <footer>
+        <p class="small-text">
+            Projet étudiant – Nuit de l'Info – Application d’aide aux utilisateurs d’anciens systèmes.
+        </p>
+        <p class="small-text">
+            Pour toute question, utilisez la page <a href="contact.html">Nous contacter</a>.
+        </p>
+    </footer>
+
+    <!-- Script global (gestion déconnexion, etc.) -->
+    <script src="js/main.js"></script>
+</body>
+</html>
 
