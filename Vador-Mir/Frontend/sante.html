@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Santé numérique - Projet Nuit de l'Info</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- HEADER COMMUN -->
+    <header class="site-header">
+        <h1 class="site-title">Assistant anciens systèmes</h1>
+
+        <nav aria-label="Navigation principale">
+            <ul class="nav-list">
+                <li class="nav-item"><a href="admin.html">Espace admin</a></li>
+                <li class="nav-item"><a href="index.html">Accueil</a></li>
+                <li class="nav-item"><a href="chatbot.html">Chatbot IA</a></li>
+                <li class="nav-item"><a href="formation.html">Formation</a></li>
+                <li class="nav-item"><a href="sante.html" aria-current="page">Santé</a></li>
+                
+                <li class="nav-item nav-right">
+                    <a href="signup.html">Inscription</a>
+                    <button id="logout-btn" type="button" class="link-button">
+                        Déconnexion
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- CONTENU SPÉCIFIQUE -->
+    <main>
+        <section aria-labelledby="sante-title" class="hero-section">
+            <h2 id="sante-title">Santé et usage du numérique</h2>
+            <p>
+                Cette page rappelle quelques bonnes pratiques pour utiliser les outils
+                numériques sans nuire à votre santé (vue, sommeil, posture…).
+            </p>
+        </section>
+
+        <section aria-labelledby="vue-title" class="info-section">
+            <h2 id="vue-title">Préserver sa vue</h2>
+            <ul>
+                <li>Faire des pauses régulières (règle 20‑20‑20).</li>
+                <li>Éviter les écrans trop lumineux dans le noir complet.</li>
+                <li>Adapter la taille des caractères si besoin.</li>
+            </ul>
+        </section>
+
+        <section aria-labelledby="sommeil-title" class="info-section">
+            <h2 id="sommeil-title">Sommeil et écrans</h2>
+            <ul>
+                <li>Limiter l’usage des écrans juste avant de dormir.</li>
+                <li>Désactiver les notifications la nuit.</li>
+                <li>Éviter de garder le téléphone sous l’oreiller.</li>
+            </ul>
+        </section>
+
+        <section aria-labelledby="posture-title" class="info-section">
+            <h2 id="posture-title">Posture et confort</h2>
+            <ul>
+                <li>Garder le dos droit et les épaules détendues.</li>
+                <li>Placer l’écran à hauteur des yeux si possible.</li>
+                <li>Faire quelques étirements réguliers.</li>
+            </ul>
+        </section>
+    </main>
+
+    <!-- FOOTER COMMUN -->
+    <footer>
+        <p class="small-text">
+            Projet étudiant – Nuit de l'Info – Application d’aide aux utilisateurs d’anciens systèmes.
+        </p>
+        <p class="small-text">
+            Besoin d'aide ? <a href="contact.html">Nous contacter</a>
+        </p>
+        <p class="small-text">
+            Informations fournisseur : <a href="fournisseur.html">Voir la page fournisseur</a>
+        </p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
