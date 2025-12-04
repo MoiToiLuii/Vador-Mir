@@ -47,7 +47,7 @@ def ping():
 @app.route("/")
 def root():
     # Redirige vers la page de login par défaut
-    return redirect("/login.html")
+    return redirect("/index.html")
 
 
 @app.route("/<path:filename>")
