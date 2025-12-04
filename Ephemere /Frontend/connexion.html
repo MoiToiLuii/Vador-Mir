@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion</title>
+    <style>
+        body {
+            margin: 0; 
+            font-family: Arial, sans-serif;
+            background: #1b263b;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .card {
+            background: #415a77;
+            padding: 30px;
+            border-radius: 10px;
+            width: 320px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.3);
+        }
+        h2 { margin-top: 0; text-align: center; }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 6px;
+            border: none;
+        }
+        .btn {
+            width: 100%;
+            padding: 12px;
+            background: #0d1b2a;
+            border: none;
+            color: white;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        .btn:hover { background: #0a1521; }
+        .link {
+            margin-top: 15px;
+            text-align: center;
+        }
+        a { color: #dce3e9; }
+    </style>
+</head>
+
+<body>
+
+    <div class="card">
+        <h2>Connexion</h2>
+
+        <form action="/login" method="POST">
+            <input type="email" name="email" placeholder="Adresse email" required>
+            <input type="password" name="password" placeholder="Mot de passe" required>
+            <button class="btn" type="submit">Se connecter</button>
+        </form>
+
+        <div class="link">
+            Pas encore de compte ? <a href="register.html">Inscription</a>
+        </div>
+    </div>
+
+</body>
+</html>
