@@ -1,51 +1,41 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <!-- Déclare l'encodage des caractères, évite les problèmes d'accents -->
     <meta charset="UTF-8">
-    <!-- Indique au navigateur d'adapter la largeur au device (mobile, tablette, PC) -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Titre de l’onglet dans le navigateur -->
     <title>Connexion - Projet Nuit de l'Info</title>
-    <!-- Lien vers la feuille de style principale du site -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- En-tête de la page, contient le titre principal -->
-    <header>
-        <!-- h1 = titre principal de la page (important pour l’accessibilité) -->
-        <h1>Connexion à l'application</h1>
+    <!-- HEADER COMMUN -->
+    <header class="site-header">
+        <h1 class="site-title">Assistant anciens systèmes</h1>
+
+        <nav aria-label="Navigation principale">
+            <ul class="nav-list">
+                <li class="nav-item"><a href="admin.html">Espace admin</a></li>
+                <li class="nav-item"><a href="index.html">Accueil</a></li>
+                <li class="nav-item"><a href="chatbot.html">Chatbot IA</a></li>
+                <li class="nav-item"><a href="formation.html">Formation</a></li>
+                <li class="nav-item">
+                    <button id="logout-btn" type="button" class="link-button">
+                        Déconnexion
+                    </button>
+                </li>
+            </ul>
+        </nav>
     </header>
 
-    <!-- Zone de contenu principale (repérée par les lecteurs d’écran) -->
+    <!-- CONTENU SPÉCIFIQUE : FORMULAIRE DE CONNEXION -->
     <main>
-        <!-- Section centrale qui contient le formulaire de connexion -->
         <section aria-labelledby="titre-connexion" class="login-section">
-            <!-- h2 = sous-titre spécifique à cette section -->
             <h2 id="titre-connexion">Identifiez-vous</h2>
 
-            <!-- Texte d’explication court -->
             <p>Connectez-vous avec votre adresse e-mail pour accéder à l'application.</p>
 
-            <!-- 
-                Formulaire de connexion.
-                - method="POST" : envoie les données de manière sécurisée.
-                - action="/login" : URL du backend qui traitera la connexion.
-                Tu adapteras cette URL selon ton framework (Flask, etc.).
-            -->
             <form method="POST" action="/login" novalidate>
-                <!-- 
-                    Chaque champ a un <label> associé pour l’accessibilité.
-                    L’attribut for sur le label doit correspondre à l’id du champ.
-                -->
                 <div class="form-group">
                     <label for="email">Adresse e-mail</label>
-                    <!-- 
-                        type="email" : active la validation de format e-mail côté navigateur.
-                        required : champ obligatoire.
-                        maxlength="100" : limite le nombre de caractères côté front.
-                        autocomplete="email" : aide le navigateur à proposer l’e-mail.
-                    -->
                     <input
                         type="email"
                         id="email"
@@ -59,11 +49,6 @@
 
                 <div class="form-group">
                     <label for="password">Mot de passe</label>
-                    <!-- 
-                        type="password" : masque le texte saisi.
-                        minlength / maxlength : bornes de longueur côté front (à vérifier aussi côté back).
-                        autocomplete="current-password" : aide pour les gestionnaires de mots de passe.
-                    -->
                     <input
                         type="password"
                         id="password"
@@ -76,20 +61,11 @@
                     >
                 </div>
 
-                <!-- 
-                    Zone pour afficher les messages d’erreur (identifiants incorrects, champ manquant, etc.).
-                    Le rôle="alert" permet au lecteur d’écran d’annoncer le message.
-                    Tu la rempliras côté JS ou en renvoyant la page avec un message côté back.
-                -->
-                <p id="login-error" class="error-message" role="alert" aria-live="assertive">
-                    <!-- Message d'erreur dynamique (laissé vide au chargement) -->
-                </p>
+                <p id="login-error" class="error-message" role="alert" aria-live="assertive"></p>
 
-                <!-- Bouton de soumission du formulaire -->
                 <button type="submit" class="btn-primary">Se connecter</button>
             </form>
 
-            <!-- Lien secondaire au cas où vous implémentez une inscription -->
             <p class="secondary-link">
                 Pas encore de compte ?
                 <a href="#" aria-disabled="true">Inscription (optionnelle)</a>
@@ -97,22 +73,16 @@
         </section>
     </main>
 
-    <!-- Pied de page avec des infos légales / contact -->
+    <!-- FOOTER COMMUN -->
     <footer>
-        <!-- 
-            Lien vers la page "Nous contacter" (que tu coderas dans contact.html).
-            C’est important pour la transparence et l’accessibilité.
-        -->
-        <p>
-            Besoin d'aide ? <a href="contact.html">Nous contacter</a>
+        <p class="small-text">
+            Projet étudiant – Nuit de l'Info – Application d’aide aux utilisateurs d’anciens systèmes.
         </p>
         <p class="small-text">
-            Projet étudiant dans le cadre de la Nuit de l'Info.
+            Besoin d'aide ? <a href="contact.html">Nous contacter</a>
         </p>
     </footer>
 
-    <!-- Inclusion du JavaScript global (gestion d'erreurs, redirections, etc.) -->
     <script src="js/main.js"></script>
 </body>
 </html>
-
