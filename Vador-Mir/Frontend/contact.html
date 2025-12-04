@@ -2,33 +2,21 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <!-- Rendre la page lisible sur mobile / tablette / PC -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nous contacter - Projet Nuit de l'Info</title>
-    <!-- Feuille de style globale -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- En-tête + navigation principale -->
+    <!-- HEADER COMMUN -->
     <header class="site-header">
         <h1 class="site-title">Assistant anciens systèmes</h1>
 
         <nav aria-label="Navigation principale">
             <ul class="nav-list">
+                <li class="nav-item"><a href="admin.html">Espace admin</a></li>
+                <li class="nav-item"><a href="index.html">Accueil</a></li>
+                <li class="nav-item"><a href="chatbot.html">Chatbot IA</a></li>
                 <li class="nav-item"><a href="formation.html">Formation</a></li>
-                <li class="nav-item">
-                    <a href="index.html">Accueil</a>
-                </li>
-                <li class="nav-item">
-                    <a href="chatbot.html">Chatbot IA</a>
-                </li>
-                <li class="nav-item">
-                    <a href="admin.html">Espace admin</a>
-                </li>
-                <li class="nav-item">
-                    <!-- Page active -->
-                    <a href="contact.html" aria-current="page">Nous contacter</a>
-                </li>
                 <li class="nav-item">
                     <button id="logout-btn" type="button" class="link-button">
                         Déconnexion
@@ -38,9 +26,8 @@
         </nav>
     </header>
 
-    <!-- Contenu principal -->
+    <!-- CONTENU SPÉCIFIQUE -->
     <main>
-        <!-- Introduction de la page de contact -->
         <section aria-labelledby="contact-intro-title" class="hero-section">
             <h2 id="contact-intro-title">Contactez l’équipe</h2>
             <p>
@@ -53,24 +40,12 @@
             </p>
         </section>
 
-        <!-- Formulaire de contact -->
         <section aria-labelledby="contact-form-title" class="contact-section">
             <h2 id="contact-form-title">Formulaire de contact</h2>
 
-            <!-- 
-                Formulaire :
-                - method="POST" : envoi des données au backend.
-                - action="/contact" : route que tu implémenteras dans routes/contact.py.
-                - novalidate : si tu veux gérer la validation côté JS ; sinon tu peux l’enlever.
-            -->
             <form method="POST" action="/contact" novalidate class="contact-form">
-                <!-- Champ nom -->
                 <div class="form-group">
                     <label for="name">Nom</label>
-                    <!-- 
-                        maxlength : limite à 50 caractères côté navigateur.
-                        required : champ obligatoire.
-                    -->
                     <input
                         type="text"
                         id="name"
@@ -82,7 +57,6 @@
                     >
                 </div>
 
-                <!-- Champ email -->
                 <div class="form-group">
                     <label for="contact-email">Adresse e-mail</label>
                     <input
@@ -96,7 +70,6 @@
                     >
                 </div>
 
-                <!-- Champ sujet -->
                 <div class="form-group">
                     <label for="subject">Sujet</label>
                     <input
@@ -109,14 +82,8 @@
                     >
                 </div>
 
-                <!-- Champ message -->
                 <div class="form-group">
                     <label for="message">Message</label>
-                    <!-- 
-                        textarea pour un texte plus long.
-                        maxlength : limite le nombre de caractères (sécurité + UX).
-                        aria-describedby : texte d’aide associé.
-                    -->
                     <textarea
                         id="message"
                         name="message"
@@ -131,17 +98,14 @@
                     </p>
                 </div>
 
-                <!-- Zone d’erreur globale pour le formulaire -->
                 <p id="contact-error" class="error-message" role="alert" aria-live="assertive"></p>
 
-                <!-- Bouton d’envoi -->
                 <button type="submit" class="btn-primary">
                     Envoyer le message
                 </button>
             </form>
         </section>
 
-        <!-- Section rappel accessibilité / légalité -->
         <section aria-labelledby="contact-info-title" class="info-section">
             <h2 id="contact-info-title">Accessibilité et données</h2>
             <p>
@@ -156,14 +120,16 @@
         </section>
     </main>
 
+    <!-- FOOTER COMMUN -->
     <footer>
         <p class="small-text">
-            Projet étudiant – Nuit de l'Info – Page de contact.
+            Projet étudiant – Nuit de l'Info – Application d’aide aux utilisateurs d’anciens systèmes.
+        </p>
+        <p class="small-text">
+            Besoin d'aide ? <a href="contact.html">Nous contacter</a>
         </p>
     </footer>
 
-    <!-- Script global (déconnexion, validations côté JS éventuelles) -->
     <script src="js/main.js"></script>
 </body>
 </html>
-
