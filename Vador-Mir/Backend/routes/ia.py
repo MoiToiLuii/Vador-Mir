@@ -21,7 +21,7 @@ def chat():
         return jsonify({"error": "Message trop long"}), 400
 
     # 1) Récupérer la clé API depuis une variable d'environnement
-    api_key = os.environ.get("nmzGQvRcANBzY7UclOkgAXeYO4TAIbpb")
+    api_key = os.environ.get("MISTRAL_API_KEY")
     if not api_key:
         return jsonify({"error": "Clé API manquante côté serveur"}), 500
 
