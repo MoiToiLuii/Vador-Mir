@@ -42,7 +42,11 @@ def chat():
         return jsonify({"error": "Réponse IA invalide"}), 502
 
     choices = result.get("choices") or []
-    if not choices or "message" not in choices[0] or "content" not in choices[0]["message"]:
+    if (
+        not choices
+        or "message" not in choices[0]
+        or "content" not in choices[0]["message"]
+    ):
         return jsonify({"error": "Réponse IA incomplète"}), 502
 
     reply_text = choices[0]["message"]["content"]
