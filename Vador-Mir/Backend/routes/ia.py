@@ -2,6 +2,7 @@ from flask import Blueprint, request, jsonify, session
 from models.ai_request import create_ai_request
 import requests
 import os
+
 ia_bp = Blueprint("ia", __name__)
 
 
@@ -19,31 +20,51 @@ def chat():
     if len(user_message) > 500:
         return jsonify({"error": "Message trop long"}), 400
 
-    # Réponse factice (tu brancheras une vraie API plus tard)
+    # 1) Récupérer la clé API depuis une variable d'environnement
+    api_key = os.environ.get("MISTRAL_API_KEY")
+    if not api_key:
+        return jsonify({"error": "Clé API manquante côté serveur"}), 500
 
-    # Récupère la clé API depuis une variable d'environnement
-    API_KEY = "nmzGQvRcANBzY7UclOkgAXeYO4TAIbpb"
-    API_URL = "https://api.mistral.ai/v1/chat/completions"
-    headers = {"Authorization": f"Bearer {API_KEY}"}
-    data = {
+    api_url = "https://api.mistral.ai/v1/chat/completions"
+    headers = {
+        "Authorization": f"Bearer {api_key}",
+        "Content-Type": "application/json",
+    }
+    payload = {
         "model": "mistral-tiny",
         "messages": [
-            {"role": "system", "content": "Répond de manière concise, en mode anarchiste"},
-            {"role": "user", "content": ""+user_message+""}
-        ]
+            {
+                "role": "system",
+                "content": "Tu es un assistant utile et concis.",
+            },
+            {
+                "role": "user",
+                "content": user_message,
+            },
+        ],
     }
-    response = requests.post(API_URL, headers=headers, json=data)
-    result = response.json()
 
-    # Récupère le texte généré par l'IA
-    bio = result["choices"][0]["message"]["content"]
+    try:
+        resp = requests.post(api_url, headers=headers, json=payload, timeout=15)
+        resp.raise_for_status()
+        result = resp.json()
+    except requests.exceptions.RequestException:
+        return jsonify({"error": "Erreur lors de l'appel à l'API d'IA"}), 502
+    except ValueError:
+        return jsonify({"error": "Réponse IA invalide"}), 502
 
-    # Enregistrement dans la BDD (version courte de la réponse)
+    # Vérifier la structure de la réponse
+    choices = result.get("choices") or []
+    if not choices or "message" not in choices[0] or "content" not in choices[0]["message"]:
+        return jsonify({"error": "Réponse IA incomplète"}), 502
+
+    reply_text = choices[0]["message"]["content"]
+
+    # Enregistrement dans la BDD
     create_ai_request(
         user_id=session["user_id"],
         question=user_message,
-        answer_short=bio[:200],
+        answer_short=reply_text[:200],
     )
 
-    return jsonify({"reply": bio}), 200
-
+    return jsonify({"reply": reply_text}), 200
