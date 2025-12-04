@@ -178,6 +178,21 @@ button.btn-primary {
     list-style: none;
 }
 
+.nav-list {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+}
+
+/* pousse le dernier bloc (Inscription + Déconnexion) à droite */
+.nav-item.nav-right {
+    margin-left: auto;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+
 /* pousse le dernier élément (Déconnexion) à droite */
 .nav-list .nav-item:last-child {
     margin-left: auto;
