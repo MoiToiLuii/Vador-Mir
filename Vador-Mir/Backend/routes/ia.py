@@ -5,6 +5,7 @@ import os
 
 ia_bp = Blueprint("ia", __name__)
 
+api_key = "nmzGQvRcANBzY7UclOkgAXeYO4TAIbpb"
 
 @ia_bp.route("/api/chat", methods=["POST"])
 def chat():
