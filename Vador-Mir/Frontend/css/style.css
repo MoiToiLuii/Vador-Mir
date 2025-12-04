@@ -172,6 +172,23 @@ button.btn-primary {
     background-color: transparent;
 }
 
+.nav-list {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+/* pousse le dernier élément (Déconnexion) à droite */
+.nav-list .nav-item:last-child {
+    margin-left: auto;
+}
+
+.nav-list .nav-item:last-child {
+    margin-left: auto;
+    margin-top: -6px;   /* à ajuster */
+}
+
+
 /* Page active : fond léger pour indiquer la position dans le site */
 .nav-item a[aria-current="page"] {
     background-color: #e0ebff;
