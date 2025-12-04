@@ -56,7 +56,7 @@ def static_files(filename):
     Sert les fichiers du Frontend.
     On empêche l'accès direct à certaines pages si l'utilisateur n'est pas connecté.
     """
-    protected_pages = {"index.html", "chatbot.html", "admin.html", "contact.html"}
+    protected_pages = {"chatbot.html", "admin.html", "contact.html"}
 
     # Si la page demandée est protégée et que l'utilisateur n'est pas connecté,
     # on le renvoie vers la page de login.
