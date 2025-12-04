@@ -7,25 +7,27 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <!-- HEADER COMMUN -->
     <header class="site-header">
         <h1 class="site-title">Assistant anciens systèmes</h1>
 
         <nav aria-label="Navigation principale">
             <ul class="nav-list">
+                <li class="nav-item"><a href="admin.html">Espace admin</a></li>
                 <li class="nav-item"><a href="index.html">Accueil</a></li>
                 <li class="nav-item"><a href="chatbot.html">Chatbot IA</a></li>
-                <li class="nav-item"><a href="admin.html">Espace admin</a></li>
                 <li class="nav-item"><a href="formation.html" aria-current="page">Formation</a></li>
-                <li class="nav-item"><a href="contact.html">Nous contacter</a></li>
                 <li class="nav-item">
-                    <button id="logout-btn" type="button" class="link-button">Déconnexion</button>
+                    <button id="logout-btn" type="button" class="link-button">
+                        Déconnexion
+                    </button>
                 </li>
             </ul>
         </nav>
     </header>
 
+    <!-- CONTENU SPÉCIFIQUE -->
     <main>
-        <!-- Section d’intro -->
         <section aria-labelledby="formation-intro-title" class="hero-section">
             <h2 id="formation-intro-title">Ressources de formation</h2>
             <p>
@@ -35,7 +37,6 @@
             </p>
         </section>
 
-        <!-- Bloc "Guides pas à pas" -->
         <section aria-labelledby="guides-title" class="info-section">
             <h2 id="guides-title">Guides pas à pas</h2>
             <ul>
@@ -45,7 +46,6 @@
             </ul>
         </section>
 
-        <!-- Bloc "Bonnes pratiques" -->
         <section aria-labelledby="best-practices-title" class="info-section">
             <h2 id="best-practices-title">Bonnes pratiques de sécurité</h2>
             <ul>
@@ -56,13 +56,16 @@
         </section>
     </main>
 
+    <!-- FOOTER COMMUN -->
     <footer>
         <p class="small-text">
-            Projet étudiant – Nuit de l'Info – Page de ressources de formation.
+            Projet étudiant – Nuit de l'Info – Application d’aide aux utilisateurs d’anciens systèmes.
+        </p>
+        <p class="small-text">
+            Besoin d'aide ? <a href="contact.html">Nous contacter</a>
         </p>
     </footer>
 
     <script src="js/main.js"></script>
 </body>
 </html>
-
