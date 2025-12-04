@@ -2,45 +2,32 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <!-- Permet l’affichage correct sur mobile / tablette / PC -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Espace administrateur - Projet Nuit de l'Info</title>
-    <!-- Feuille de style globale -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- En-tête avec titre + navigation principale -->
+    <!-- HEADER COMMUN -->
     <header class="site-header">
         <h1 class="site-title">Assistant anciens systèmes</h1>
 
         <nav aria-label="Navigation principale">
             <ul class="nav-list">
-                <li class="nav-item">
-                    <a href="index.html">Accueil</a>
-                </li>
-                <li class="nav-item">
-                    <a href="chatbot.html">Chatbot IA</a>
-                </li>
-                <!-- aria-current indique la page active -->
-                <li class="nav-item">
-                    <a href="admin.html" aria-current="page">Espace admin</a>
-                </li>
-                <li class="nav-item">
-                    <a href="contact.html">Nous contacter</a>
-                </li>
+                <li class="nav-item"><a href="admin.html" aria-current="page">Espace admin</a></li>
+                <li class="nav-item"><a href="index.html">Accueil</a></li>
+                <li class="nav-item"><a href="chatbot.html">Chatbot IA</a></li>
+                <li class="nav-item"><a href="formation.html">Formation</a></li>
                 <li class="nav-item">
                     <button id="logout-btn" type="button" class="link-button">
                         Déconnexion
                     </button>
                 </li>
-                <li class="nav-item"><a href="formation.html">Formation</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Contenu principal -->
+    <!-- CONTENU SPÉCIFIQUE -->
     <main>
-        <!-- Introduction de l’espace admin -->
         <section aria-labelledby="admin-intro-title" class="hero-section">
             <h2 id="admin-intro-title">Tableau de bord administrateur</h2>
             <p>
@@ -54,15 +41,8 @@
             </p>
         </section>
 
-        <!-- Section gestion des utilisateurs -->
         <section aria-labelledby="users-title" class="admin-section">
             <h2 id="users-title">Utilisateurs enregistrés</h2>
-
-            <!-- 
-                Tableau accessible :
-                - caption : titre du tableau.
-                - thead/tbody/th : structure claire pour les lecteurs d’écran.
-            -->
             <table class="admin-table">
                 aption>Liste des comptes utilisateurs</caption>
                 <thead>
@@ -74,21 +54,15 @@
                     </tr>
                 </thead>
                 <tbody id="users-table-body">
-                    <!-- 
-                        Lignes générées dynamiquement par un futur fichier JS (ex: admin.js)
-                        à partir des données renvoyées par l’API /admin/users.
-                        On laisse un exemple statique en attendant.
-                    -->
                     <tr>
                         <td>exemple@domaine.com</td>
                         <td>admin</td>
                         <td>2025-12-03</td>
                         <td>
-                            <!-- Boutons d’actions simples, avec texte explicite -->
-                            <button type="button" class="btn-small" aria-label="Passer cet utilisateur en rôle utilisateur simple">
+                            <button type="button" class="btn-small">
                                 Rendre user
                             </button>
-                            <button type="button" class="btn-small btn-danger" aria-label="Supprimer ce compte utilisateur">
+                            <button type="button" class="btn-small btn-danger">
                                 Supprimer
                             </button>
                         </td>
@@ -97,10 +71,8 @@
             </table>
         </section>
 
-        <!-- Section historique des requêtes IA -->
         <section aria-labelledby="history-title" class="admin-section">
             <h2 id="history-title">Historique des requêtes IA</h2>
-
             <table class="admin-table">
                 aption>Dernières questions envoyées au chatbot IA</caption>
                 <thead>
@@ -112,7 +84,6 @@
                     </tr>
                 </thead>
                 <tbody id="ai-requests-table-body">
-                    <!-- Exemple statique ; sera remplacé par les données API /admin/ai-requests -->
                     <tr>
                         <td>2025-12-03 10:30</td>
                         <td>exemple@domaine.com</td>
@@ -123,7 +94,6 @@
             </table>
         </section>
 
-        <!-- Section d’info / rappel sécurité -->
         <section aria-labelledby="admin-security-title" class="info-section">
             <h2 id="admin-security-title">Rappels sur la sécurité et les données</h2>
             <p>
@@ -139,20 +109,17 @@
         </section>
     </main>
 
+    <!-- FOOTER COMMUN -->
     <footer>
         <p class="small-text">
-            Espace réservé aux administrateurs. Déconnectez-vous lorsque vous avez terminé.
+            Projet étudiant – Nuit de l'Info – Application d’aide aux utilisateurs d’anciens systèmes.
+        </p>
+        <p class="small-text">
+            Besoin d'aide ? <a href="contact.html">Nous contacter</a>
         </p>
     </footer>
 
-    <!-- JS global (déconnexion, éventuels contrôles d’accès côté front) -->
     <script src="js/main.js"></script>
-    <!-- Plus tard, tu pourras ajouter un admin.js pour charger les tableaux via l’API -->
-
-<script src="js/main.js"></script>
-<script src="js/admin.js"></script>
-
-
+    <script src="js/admin.js"></script>
 </body>
 </html>
-
