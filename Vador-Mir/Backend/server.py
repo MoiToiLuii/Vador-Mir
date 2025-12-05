@@ -6,7 +6,6 @@ from pathlib import Path
 from config.db import init_db
 from routes.auth import auth_bp
 from routes.ia import ia_bp
-from routes.admin import admin_bp
 from routes.contact import contact_bp
 
 
@@ -21,7 +20,6 @@ app.register_blueprint(ia_bp)
 # lien entre bp et serv
 app.register_blueprint(auth_bp)
 
-app.register_blueprint(admin_bp)
 
 app.register_blueprint(contact_bp)
 
@@ -76,6 +74,3 @@ if __name__ == "__main__":
     init_db()          # crée les tables si besoin
    
 # Pas de app.run() ici : c'est Alwaysdata (uWSGI) qui utilisera wsgi.application/ app.run(host="127.0.0.1", port=5000, debug=True)
-
-
-
