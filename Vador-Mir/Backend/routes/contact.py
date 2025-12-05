@@ -64,3 +64,4 @@ def handle_contact():
     # On pourrait afficher un vrai message de succès côté front en lisant ?success=1
     return redirect("/contact.html?success=1")
 
+
