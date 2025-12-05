@@ -28,6 +28,169 @@ html {
     font-size: 16px;
 }
 
+/* ici pour l'inscription */
+
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+/* le contenu principal prend la place dispo */
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+/* le contenu principal prend la place dispo */
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+/* le contenu principal prend la place dispo */
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;  /* horizontal */
+    align-items: center;      /* vertical */
+    flex-direction: column;
+}
+
+.error-message {
+  color: #d00000;
+  margin-top: 0.25rem;
+}
+
+/* Conteneur principal plus étroit et centré */
+main {
+  max-width: 1100px;
+  margin: 2.5rem auto 4rem;
+  padding: 0 1.5rem;
+}
+
+/* Titres de section */
+.hero-section h2,
+.features-section h2,
+.info-section h2 {
+  font-size: 1.9rem;
+  margin-bottom: 1rem;
+}
+
+
+/* Section fonctionnalités avec légère carte transparente */
+.features-section {
+  margin-bottom: 2.5rem;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1.5rem;
+}
+
+/* Cartes fonctionnalités */
+.feature-card {
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 16px;
+  padding: 1.6rem 1.8rem;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.12);
+  backdrop-filter: blur(6px);
+}
+
+.feature-card h3 {
+  margin-bottom: 0.6rem;
+  font-size: 1.25rem;
+}
+
+/* Forcer la transparence du bloc "Pourquoi..." */
+.info-section {
+  margin-top: 2rem;
+  padding: 1.5rem 0 2rem;
+  background: transparent !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  border: none !important;
+}
+
+/* Au cas où le fond viendrait du <section> générique */
+section.info-section {
+  background: transparent !important;
+}
+
+
+
+/* Boutons */
+.btn-primary {
+  display: inline-block;
+  padding: 0.7rem 1.6rem;
+  border-radius: 999px;
+  background: #2563eb;
+  color: #ffffff;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 8px 22px rgba(37, 99, 235, 0.4);
+}
+
+.btn-primary:hover {
+  background: #1d4ed8;
+}
+
+.btn-secondary {
+  display: inline-block;
+  padding: 0.65rem 1.4rem;
+  border-radius: 999px;
+  border: 1px solid rgba(15, 23, 42, 0.25);
+  background: rgba(255, 255, 255, 0.75);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+
+.hero-section,
+.features-section,
+.info-section {
+  background: transparent;
+}
+
+.hero-section {
+  margin: 1.5rem 0 2.5rem;
+  padding: 1.5rem 0 2rem;
+  background: transparent;      /* plus de fond blanc */
+  border-radius: 0;             /* plus de carte */
+  box-shadow: none;             /* plus d’ombre */
+  backdrop-filter: none;
+}
+
+.enjeux-list {
+  margin-top: 1rem;
+  padding-left: 1.2rem;
+}
+
+.enjeux-list li {
+  margin-bottom: 0.6rem;
+  line-height: 1.5;
+}
+
+
+.feature-card {
+  background: rgba(255, 255, 255, 0.08); /* léger voile, tu peux mettre 0 pour totalement transparent */
+  border-radius: 12px;
+  padding: 1.5rem;
+  backdrop-filter: blur(2px); /* optionnel, effet verre dépoli */
+}
 
 
 body {
@@ -261,17 +424,12 @@ button.btn-primary {
     background: rgba(255, 255, 255, 0.25);
 }
 
+
+
 /* ===========================
    Sections génériques
    =========================== */
 
-.hero-section {
-    margin: 1.5rem 0;
-    padding: 1rem;
-    background-color: #ffffff;
-    border-radius: 0.5rem;
-    box-shadow: 0 1px 3px rgba(15, 23, 42, 0.05);
-}
 
 .admin-section,
 .info-section,
@@ -281,6 +439,27 @@ button.btn-primary {
     background-color: #ffffff;
     border-radius: 0.5rem;
     box-shadow: 0 1px 3px rgba(15, 23, 42, 0.05);
+}
+
+/* Page formation : tout en mode "texte sur fond" */
+
+
+/* Un peu d'espace mais sans carte */
+body.formation-page main {
+  max-width: 1100px;
+  margin: 2.5rem auto 4rem;
+  padding: 0 1.5rem;
+}
+
+
+body.formation-page main,
+body.formation-page section,
+body.formation-page .content-block {
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+  border-radius: 0 !important;
+  backdrop-filter: none !important;
 }
 
 /* ===========================
@@ -456,4 +635,3 @@ footer {
         flex: 1;
     }
 }
-
